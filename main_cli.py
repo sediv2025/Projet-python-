@@ -10,8 +10,9 @@ class CLIApp:
         print("1. Afficher les tables")
         print("2. Ajouter une entrée")
         print("3. Sauvegarder les données")
-        print("4. Créer une nouvelle table")  # Nouvelle option
-        print("5. Quitter")
+        print("4. Créer une nouvelle table")
+        print("5. Supprimer une table")  
+        print("6. Quitter")
 
     def afficher_tables(self):
         if not isinstance(self.tables, dict):
@@ -41,6 +42,14 @@ class CLIApp:
                     pass
 
         return max(ids, default=0) + 1
+    
+    def supprimer_table(self):
+        nom_table = input("Nom de la table à supprimer : ").strip()
+        if nom_table not in self.tables:
+            print(f"La table '{nom_table}' n'existe pas.")
+            return
+        del self.tables[nom_table]
+        print(f"Table '{nom_table}' supprimée avec succès.")
 
     def ajouter_enregistrement(self):
         nom_table = input("Nom de la table : ")
@@ -77,6 +86,7 @@ class CLIApp:
             return
         self.tables[nom_table] = []
         print(f"Table '{nom_table}' créée avec succès.")
+        
 
     def executer(self):
         while True:
@@ -91,6 +101,8 @@ class CLIApp:
             elif choix == "4":
                 self.creer_table()
             elif choix == "5":
+                self.supprimer_table()
+            elif choix == "6":
                 print("Fermeture du programme.")
                 break
             else:
