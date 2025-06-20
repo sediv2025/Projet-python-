@@ -11,7 +11,7 @@ class CRUDOperations :
         def creer_table(self,nom_table):
             if nom_table in self.tables :
                 raise ValueError(f"la table'{nom_table}'existe déjà.")
-            self.tables[nom_tables] = []
+            self.tables[nom_table] = []
             self.auto_increment_ids[nom_table] = 1
             print(f"Table'{nom_table}'créée avec succès.")
 
