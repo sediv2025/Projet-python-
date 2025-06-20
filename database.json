@@ -1,5 +1,12 @@
 {
-    "etudiants": [],
+    "etudiants": [
+        {
+            "id": "1",
+            "nom": "KADIMA",
+            "prenom": "sed",
+            "postnom": "mulumba"
+        }
+    ],
     "professeur": [
         {
             "id": 1,

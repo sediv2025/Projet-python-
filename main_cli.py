@@ -5,7 +5,7 @@ class CLIApp:
     def __init__(self):
         self.storage = StorageManager()
         self.tables = self.storage.chargees_donnees()
-
+    "Affiicher lee menu principal""
     def afficher_menu(self):
         print("\n********** Système de gestion **********")
         print("1. Afficher les tables")
@@ -17,7 +17,7 @@ class CLIApp:
         print("7. Filtrer les enregistrements") 
         print("8. Modifier le nom d'une table")      # Ajouté
         print("9. Quitter")                           # Modifié
-
+    "afficher toutes les tables et leurs données"
     def afficher_tables(self):
         if not isinstance(self.tables, dict):
             print("Erreur : les données chargées ne sont pas un dictionnaire.")
@@ -31,7 +31,7 @@ class CLIApp:
             print(f"\nTable: {table}")
             for record in records:
                 print(record)
-
+    "foncttion qui permet de générer d'une automatique les id"
     def obtenir_prochain_id(self, nom_table):
         table = self.tables.get(nom_table, [])
         if not table:
@@ -46,7 +46,7 @@ class CLIApp:
                     pass
 
         return max(ids, default=0) + 1
-    
+    "supprimer une table existante"
     def supprimer_table(self):
         nom_table = input("Nom de la table à supprimer : ").strip()
         if nom_table not in self.tables:
@@ -54,7 +54,7 @@ class CLIApp:
             return
         del self.tables[nom_table]
         print(f"Table '{nom_table}' supprimée avec succès.")
-
+    "ajouter un enregistrement à une table existante"
     def ajouter_enregistrement(self):
         nom_table = input("Nom de la table : ")
         if nom_table not in self.tables:
@@ -79,6 +79,7 @@ class CLIApp:
         
         self.tables[nom_table].append(nouveau_enregistrement)
         print(f"Enregistrement ajouté à la table '{nom_table}' avec ID {prochain_id}.")
+    "mettre à jour un enregistrement dans une table "
     def mettre_a_jour_enregistrement(self):
         nom_table = input("Nom de la table : ").strip()
         if nom_table not in self.tables:
@@ -97,6 +98,7 @@ class CLIApp:
                 print("Enregistrement mis à jour.")
                 return
         print("Aucun enregistrement avec cet ID.")
+    "fonction qui permet de filtrer un message "
     def filtrer_enregistrements(self):
         nom_table = input("Nom de la table : ").strip()
         if nom_table not in self.tables:
@@ -112,6 +114,7 @@ class CLIApp:
                 trouve = True
         if not trouve:
             print("Aucun enregistrement trouvé.")
+    "fonction qui permet de créer une nouvelle tabble"
     def creer_table(self):
         nom_table = input("Nom de la nouvelle table à créer : ").strip()
         if not nom_table:
@@ -122,7 +125,7 @@ class CLIApp:
             return
         self.tables[nom_table] = []
         print(f"Table '{nom_table}' créée avec succès.")
-        
+    "modifier le nom d'une table existante "
     def modifier_nom_table(self):
         ancien_nom = input("Nom actuel de la table à modifier : ").strip()
         if ancien_nom not in self.tables:
@@ -137,7 +140,7 @@ class CLIApp:
             return
         self.tables[nouveau_nom] = self.tables.pop(ancien_nom)
         print(f"Le nom de la table '{ancien_nom}' a été modifié en '{nouveau_nom}'.")
-
+    "exécuion de l'interface en ligne de commande"
     def executer(self):
         while True:
             self.afficher_menu()
@@ -164,7 +167,7 @@ class CLIApp:
             else: 
                 print("choix invalide")
 
-# Lancer le programme
+"exécution du programme en ligne de commande"
 if __name__ == "__main__":
     app = CLIApp()
     app.executer()
