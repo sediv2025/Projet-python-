@@ -19,7 +19,7 @@ class SortEngine:
             self.data[j+1] = temp
             
     """implémenter un tri rapide basé sur la recursivité"""
-    def tri_rapide(delf,key):
+    def tri_rapide(self,key):
         self.data = self.tri_rapide_recursive(self.data,key)
 
     """ implémenter une fonction recursive pour le tri rapide."""
@@ -32,9 +32,9 @@ class SortEngine:
         droite = [x for x in arr if x [key] > pivot]
         return self.tri_rapide_recursive(gauche,key)+ milieu + self.tri_rapide_recursive(droite,key)
 
-    """ implémenter un tri multit-niveaux basé sur pluseurs clés."""
+    """ implémenter un tri multit-niveaux basé sur plusieurs clés."""
     def tri_multi_colonne(self,key):
-        self.data.tri(key=lambda x: tuple(x[k]for k in keys))
+        self.data.tri(key=lambda x: tuple(x[k]for k in key))
 
     """construire une fonction qui retourne les données triées"""
     def construire_donnees_sortie(self):
