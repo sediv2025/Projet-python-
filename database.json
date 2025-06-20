@@ -1,4 +1,12 @@
 {
     "etudiants": [],
-    "professeur": []
+    "professeur": [
+        {
+            "id": 1,
+            "nom": "jean",
+            "prenom": "geek",
+            "post": "mukeba"
+        }
+    ],
+    "Utilisateurs": []
 }

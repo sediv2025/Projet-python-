@@ -1,5 +1,6 @@
 from storage import StorageManager
 
+#ajout
 class CLIApp:
     def __init__(self):
         self.storage = StorageManager()

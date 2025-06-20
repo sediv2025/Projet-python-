@@ -1,4 +1,4 @@
-#créer une classe pour définir et gérer les schémas d'une table
+#créer une classe pour définir et gérer les schémas d'une table #ajout
 class SchemaManager:
     
     """la ligne de constructrice qui va initialiser un objet créer à partir d'une classe"""
@@ -24,15 +24,15 @@ class SchemaManager:
         la fonction retourne True si valide sinon une exception est levée
         
         """
-        def valider_data(self,table_name,data):
+        def valider_data(self,nom_table,data):
             
             #vérifier si le schéma existe dans le dictionnaire
-            if nnom_table not in self.schemas:
+            if nom_table not in self.schemas:
                 raise ValueError(f"le schéma'{nom_table}' n'existe pas")
             schema = self.schhemas[ nom_table]
             for colonne, value in data.items():
                 if colonne not in schema :
-                    raise valueError(f"colonne'{colonne}': attendu {schemas[colonne]._nom_} obtenu {type(value)._nom_}")
+                    raise ValueError (f"colonne'{colonne}': attendu {self.schemas[colonne]._nom_} obtenu {type(value)._nom_}")
             print(f"données valides pour'{nom_table}'.")
             return True
         

@@ -1,4 +1,4 @@
-#créer une classe pour gérer les recherches et filtrer
+#créer une classe pour gérer les recherches et filtrer #ajout
 class QueryEngine :
     
     """

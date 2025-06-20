@@ -1,4 +1,4 @@
-# créer une classe pour gérer le tri
+# créer une classe pour gérer le tri #ajout
 class SortEngine:
     
     """
@@ -19,7 +19,7 @@ class SortEngine:
             self.data[j+1] = temp
             
     """implémenter un tri rapide basé sur la recursivité"""
-    def tri_rapide(delf,key):
+    def tri_rapide(self, delf,key):
         self.data = self.tri_rapide_recursive(self.data,key)
 
     """ implémenter une fonction recursive pour le tri rapide."""
@@ -34,7 +34,7 @@ class SortEngine:
 
     """ implémenter un tri multit-niveaux basé sur pluseurs clés."""
     def tri_multi_colonne(self,key):
-        self.data.tri(key=lambda x: tuple(x[k]for k in keys))
+        self.data.tri(key=lambda x: tuple(x[k]for k in key))
 
     """construire une fonction qui retourne les données triées"""
     def construire_donnees_sortie(self):

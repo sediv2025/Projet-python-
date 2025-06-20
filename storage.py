@@ -3,7 +3,7 @@ import json
 # Module pour gérer les fichiers et répertoires
 import os
 
-# Créer une classe pour gérer la sauvegarde
+# Créer une classe pour gérer la sauvegarde #ajout
 class StorageManager:
     
     def __init__(self, file_path="database.json"):
