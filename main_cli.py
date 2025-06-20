@@ -160,6 +160,9 @@ class CLIApp:
                 self.modifier_nom_table()        # Ajouté
             elif choix == "9":
                 print("Fermeture du programme.")
+                break 
+            else: 
+                print("choix invalide")
 
 # Lancer le programme
 if __name__ == "__main__":
