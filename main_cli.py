@@ -5,7 +5,7 @@ class CLIApp:
     def __init__(self):
         self.storage = StorageManager()
         self.tables = self.storage.chargees_donnees()
-    "Affiicher lee menu principal""
+    "Affiicher lee menu principal"
     def afficher_menu(self):
         print("\n********** Système de gestion **********")
         print("1. Afficher les tables")
